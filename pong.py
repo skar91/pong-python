@@ -33,11 +33,7 @@ score = 0
 
 #draws the paddle. Also restricts its movement between the edges
 #of the window.
-def drawrect(screen,x,y):
-    if x <= 0:
-        x = 0
-    if x >= 699:
-        x = 699    
+def drawrect(screen,x,y):   
     pygame.draw.rect(screen,RED,[x,y,100,20])
      
 
@@ -81,7 +77,11 @@ while not done:
     screen.fill(BLACK)
     rect_x += rect_change_x
     rect_y += rect_change_y
-    
+    if rect_x <= 0:
+        rect_x = 0
+    if rect_x >= 699:
+        rect_x = 699 
+        
     ball_x += ball_change_x
     ball_y += ball_change_y
     
